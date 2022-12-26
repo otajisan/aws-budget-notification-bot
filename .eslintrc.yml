@@ -1,0 +1,30 @@
+env:
+  node: true
+  es2022: true
+  jest: true
+extends:
+  - airbnb-base
+  - plugin:import/errors
+  - plugin:import/warnings
+  - plugin:import/typescript
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+plugins:
+  - '@typescript-eslint'
+  - import
+  - jest
+ignorePatterns:
+  - '*.js'
+  - '*.d.ts'
+rules:
+  "@typescript-eslint/no-unused-vars": error
+  "@typescript-eslint/no-unused-expressions": error
+  import/extensions: [ error, ignorePackages, { "ts": "never", "js": "never" } ]
+  import/no-unresolved: error
+  import/prefer-default-export: off
+  no-new: off
+  no-unused-vars: off
+  no-useless-constructor: off
+  no-unused-expressions: off
